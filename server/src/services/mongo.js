@@ -1,7 +1,11 @@
 const mongoose = require('mongoose');
 
-const MONGO_URL =
-  'mongodb+srv://aladdin:626893@devcampscluster.xnruf.mongodb.net/nasa?retryWrites=true&w=majority';
+// This for Running API Tests With Dotenv
+require('dotenv').config();
+
+const MONGO_URL = process.env.MONGO_URL;
+
+mongoose.set('strictQuery', true);
 
 mongoose.connection.once('open', () => {
   console.info('MongoDB connection ready!');
