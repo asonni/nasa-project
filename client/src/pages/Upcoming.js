@@ -21,7 +21,10 @@ const Upcoming = props => {
           <tr key={String(launch.flightNumber)}>
             <td>
               <Clickable style={{ color: 'red' }}>
-                <Link className={classes.link} onClick={() => abortLaunch(launch.flightNumber)}>
+                <Link
+                  className={classes.link}
+                  onClick={() => abortLaunch(launch.flightNumber)}
+                >
                   ✖
                 </Link>
               </Clickable>
@@ -38,7 +41,10 @@ const Upcoming = props => {
 
   return (
     <Appear id='upcoming' animate show={entered}>
-      <Paragraph>Upcoming missions including both SpaceX launches and newly scheduled Zero to Mastery rockets.</Paragraph>
+      <Paragraph>
+        Upcoming missions including both SpaceX launches and newly scheduled
+        Zero to Mastery rockets.
+      </Paragraph>
       <Words animate>Warning! Clicking on the ✖ aborts the mission.</Words>
       <Table animate show={entered}>
         <table style={{ tableLayout: 'fixed' }}>
